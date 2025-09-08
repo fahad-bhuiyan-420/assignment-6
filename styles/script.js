@@ -2,10 +2,38 @@ const cart = {};
 let totalPrice = 0;
 const treeContainer = document.getElementById('tree-container');
 
+const showSpinner = () => {
+      document.getElementById('spinner').classList.remove('hidden');
+}
+
+const hideSpinner = () => {
+  document.getElementById('spinner').classList.add('hidden');
+};
+
+const btnRemove = () => {
+    const btnClass = document.getElementById('category-tag');
+    for (let i=0; i < btnClass.children.length; i++){
+        btnClass.children[i].classList.remove('clicked')
+    }
+}
+const categoryBtns = document.querySelectorAll(".category-btn");
+categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btnRemove();
+        btn.classList.add('clicked')
+    })
+})
+
 const loadAllTrees = () => {
+    showSpinner();
     fetch("https://openapi.programming-hero.com/api/plants")
     .then(res => res.json())
-    .then(json => displayAllTrees(json.plants))
+    .then(json => {displayAllTrees(json.plants)
+    hideSpinner()})
+    .catch(err => {
+        console.error(err);
+        hideSpinner();
+    });
 }
 // {
 //     "id": 1,
@@ -16,9 +44,15 @@ const loadAllTrees = () => {
 //     "price": 500
 // }
 const loadSpecificTrees = (id) => {
+    showSpinner();
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then(res => res.json())
-    .then(json => displaySpecificTrees(json.plants))
+    .then(json => {displaySpecificTrees(json.plants)
+    hideSpinner()})
+    .catch(err => {
+        console.error(err);
+        hideSpinner();
+    });
 }
 
 const displaySpecificTrees = (plants) => {
@@ -135,4 +169,4 @@ const loadCartContainer = (name, price) => {
 
 // const allTreesBtn = ''
 
-// loadAllTrees();
+loadAllTrees();

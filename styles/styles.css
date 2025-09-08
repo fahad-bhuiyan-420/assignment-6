@@ -1,1 +1,6 @@
-@import "tailwindcss"
+.clicked{
+    background-color: #15803D
+};
+
+@import "tailwindcss";
+

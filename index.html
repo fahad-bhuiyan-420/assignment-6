@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body class="bg-[#E8F8EE]">
     <header>
@@ -32,23 +33,27 @@
         </div>
     </header>
     <main>
+        
         <section><h3 class="text-center text-3xl font-semibold mt-[100px]">Choose Your Trees</h3></section>
+        <div class="flex justify-center items-center">
+            <span id="spinner" class="loading loading-dots loading-xl"></span>
+        </div>
         <section class="flex flex-col md:flex-row justify-center my-6 ">
             
             <div class="mr-8 mx-auto">
                 <h class="font-semibold mb-[16px] text-xl flex justify-center">Categories</h>
-                <div class="flex flex-col space-y-2 mt-[16px] mb-4">
-                    <button onclick="loadAllTrees()" class="hover:bg-[#15803D]">All Trees</button>
-                    <button onclick="loadSpecificTrees(1)" class="hover:bg-[#15803D]">Fruit Trees</button>
-                    <button onclick="loadSpecificTrees(2)" class="hover:bg-[#15803D]">Flowering Trees</button>
-                    <button onclick="loadSpecificTrees(3)" class="hover:bg-[#15803D]">Shade Trees</button>
-                    <button onclick="loadSpecificTrees(4)" class="hover:bg-[#15803D]">Medicinal Trees</button>
-                    <button onclick="loadSpecificTrees(5)" class="hover:bg-[#15803D]">Timber Trees</button>
-                    <button onclick="loadSpecificTrees(6)" class="hover:bg-[#15803D]">EverGreen Trees</button>
-                    <button onclick="loadSpecificTrees(7)" class="hover:bg-[#15803D]">Ornamental Plants</button>
-                    <button onclick="loadSpecificTrees(8)" class="hover:bg-[#15803D]">Bamboo</button>
-                    <button onclick="loadSpecificTrees(9)" class="hover:bg-[#15803D]">Climbers</button>
-                    <button onclick="loadSpecificTrees(10)" class="hover:bg-[#15803D]">Aquatic Plants</button>
+                <div id="category-tag" class="flex flex-col space-y-2 mt-[16px] mb-4">
+                    <button onclick="loadAllTrees()" class="hover:bg-[#15803D] category-btn">All Trees</button>
+                    <button onclick="loadSpecificTrees(1)" class="hover:bg-[#15803D] category-btn">Fruit Trees</button>
+                    <button onclick="loadSpecificTrees(2)" class="hover:bg-[#15803D] category-btn">Flowering Trees</button>
+                    <button onclick="loadSpecificTrees(3)" class="hover:bg-[#15803D] category-btn">Shade Trees</button>
+                    <button onclick="loadSpecificTrees(4)" class="hover:bg-[#15803D] category-btn">Medicinal Trees</button>
+                    <button onclick="loadSpecificTrees(5)" class="hover:bg-[#15803D] category-btn">Timber Trees</button>
+                    <button onclick="loadSpecificTrees(6)" class="hover:bg-[#15803D] category-btn">EverGreen Trees</button>
+                    <button onclick="loadSpecificTrees(7)" class="hover:bg-[#15803D] category-btn">Ornamental Plants</button>
+                    <button onclick="loadSpecificTrees(8)" class="hover:bg-[#15803D] category-btn">Bamboo</button>
+                    <button onclick="loadSpecificTrees(9)" class="hover:bg-[#15803D] category-btn">Climbers</button>
+                    <button onclick="loadSpecificTrees(10)" class="hover:bg-[#15803D] category-btn">Aquatic Plants</button>
                 </div>
             </div>
             <div id="tree-container" class="grid md:grid-cols-3 space-x-6 space-y-6 mb-4">
@@ -151,6 +156,10 @@
                         </form>
                         </div>
                     </dialog>
+
+                    
+                    
+                    
     </main>
 
     <script src="styles/script.js"></script>
