@@ -36,8 +36,8 @@
         <section class="flex flex-col md:flex-row justify-center my-6 ">
             
             <div class="mr-8 ">
-                <h class="font-semibold mb-[16px] text-xl">Categories</h>
-                <div class="flex flex-col space-y-2 mt-[16px]">
+                <h class="font-semibold mb-[16px] text-xl flex justify-center">Categories</h>
+                <div class="flex flex-col space-y-2 mt-[16px] mb-4">
                     <button onclick="loadAllTrees()" class="hover:bg-[#15803D]">All Trees</button>
                     <button onclick="loadSpecificTrees(1)" class="hover:bg-[#15803D]">Fruit Trees</button>
                     <button onclick="loadSpecificTrees(2)" class="hover:bg-[#15803D]">Flowering Trees</button>
@@ -51,9 +51,9 @@
                     <button onclick="loadSpecificTrees(10)" class="hover:bg-[#15803D]">Aquatic Plants</button>
                 </div>
             </div>
-            <div id="tree-container" class="grid md:grid-cols-3 space-x-6 space-y-6">
+            <div id="tree-container" class="grid md:grid-cols-3 space-x-6 space-y-6 mb-4">
                 
-                <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px]">
+                <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px] ">
                     <img class="max-h-[190px]" src="/assets/hero-leaf1.png" alt="">
                     <h3 class="font-bold">Mango Tree</h3>
                     <p class="text-[#1F2937]">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
@@ -64,7 +64,7 @@
                     <button class="btn btn-primary rounded-full bg-[#15803D] text-white mr-4 w-full">Add to Cart</button>
                 </div>
             </div>
-            <div  class="bg-white p-4 rounded-[8px] w-[250px] space-y-3">
+            <div  class="bg-white p-4 rounded-[8px] w-[250px] space-y-3 mx-auto">
                 <h3 class="font-semibold text-2xl">Your Cart</h3>
                 <div id="cart-container" class="space-y-3">
                 </div>
@@ -75,6 +75,65 @@
             </div>
             
             
+        </section>
+
+        <section class="space-y-8 my-[100px]">
+            <h3 class="text-[32px] font-semibold text-center">About the Campaign</h3>
+            <div class="flex flex-col md:flex-row justify-center space-x-10">
+                <img class="mb-4" src="./assets/about.png" alt="">
+                <div class=" text-[#1F2937] max-w-[530px] space-y-3  content-center text-center md:text-left">
+                    <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+
+                    <ul class="list-disc ml-4 ">
+                        <li >Restoration of natural habitats</li>
+                        <li>Improvement of air quality</li>
+                        <li>Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-5">
+            <h3 class="text-[32px] font-semibold text-center">Our Impact</h3>
+            <div class=" grid grid-cols-1 md:grid-cols-3 space-x-[50px] space-y-4">
+                <div class=" bg-white text-center p-[40px] rounded-[12px] space-y-2.5">
+                    <h3 class="text-[#15803D] text-3xl font-semibold">500K+</h3>
+                    <p>Trees Planted</p>
+                </div>
+                <div class=" bg-white text-center p-[40px] rounded-[12px] space-y-2.5">
+                    <h3 class="text-[#15803D] text-3xl font-semibold">120+</h3>
+                    <p>communities Involved</p>
+                </div>
+                <div class=" bg-white text-center p-[40px] rounded-[12px] space-y-2.5">
+                    <h3 class="text-[#15803D] text-3xl font-semibold">30+</h3>
+                    <p>Countries Reached</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="bg-[#166534] items-center py-[100px] mt-[100px]">
+            <div>
+                <h3 class="text-white text-center text-[32px] font-semibold mb-[40px]">Plant a Tree Today</h3>
+            <div class=" bg-[#15803D] rounded-2xl space-y-3 flex flex-col mx-auto justify-center w-[30%] p-[40px]">
+                <input type="text" placeholder="Your Name" class="input w-full rounded-2xl " />
+                <input type="text" placeholder="Your Email Address" class="input w-full rounded-2xl" />
+
+
+                <input type="text" class="input w-full rounded-2xl" placeholder="Number of Trees" list="Number of Trees" />
+                <datalist id="Number of Trees">
+                <option value="1 Tree - $5"></option>
+                <option value="5 Tree - $25"></option>
+                <option value="10 Tree - $50"></option>
+                </datalist>
+
+                <button class="btn btn-warning rounded-full text-[#15803D] ">Donate Now</button>
+            </div>
+            </div>
+        </section>
+
+        <section class="bg-[#14532D] text-center content-center h-[72px]">
+            <p class="text-white">© 2025 Green Earth. All Rights Reserved.</p>
         </section>
     </main>
 

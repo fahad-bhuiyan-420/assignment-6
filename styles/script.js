@@ -27,7 +27,7 @@ const displaySpecificTrees = (plants) => {
     plants.forEach(plant => {
         const plantDiv = document.createElement('div');
         plantDiv.innerHTML = `
-        <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px]">
+        <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px] mx-auto">
                     <img class="max-h-[190px] w-full object-cover" src="${plant.image}" alt="">
                     <h3 class="font-bold">${plant.name}</h3>
                     <p class="text-[#1F2937]">${plant.description} Its dense green</p>
@@ -51,7 +51,7 @@ const displayAllTrees = (trees) =>{
     trees.forEach(tree => {
         const treeDiv = document.createElement('div');
         treeDiv.innerHTML = `
-        <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px]">
+        <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px] mx-auto">
                     <img class="max-h-[190px] w-full object-cover" src="${tree.image}" alt="">
                     <h3 class="font-bold">${tree.name}</h3>
                     <p class="text-[#1F2937]">${tree.description} Its dense green</p>
