@@ -29,7 +29,7 @@ const displaySpecificTrees = (plants) => {
         plantDiv.innerHTML = `
         <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px] mx-auto">
                     <img class="max-h-[190px] w-full object-cover" src="${plant.image}" alt="">
-                    <h3 class="font-bold">${plant.name}</h3>
+                    <h3 onclick="loadTreeDetail(${plant.id})" class="font-bold">${plant.name}</h3>
                     <p class="text-[#1F2937]">${plant.description} Its dense green</p>
                     <div class="flex justify-between ">
                         <p class="bg-[#DCFCE7] text-green-700 rounded-full p-2">${plant.category}</p>
@@ -53,7 +53,7 @@ const displayAllTrees = (trees) =>{
         treeDiv.innerHTML = `
         <div class="bg-white max-w-[350px] p-4 space-y-2 rounded-[8px] mx-auto">
                     <img class="max-h-[190px] w-full object-cover" src="${tree.image}" alt="">
-                    <h3 class="font-bold">${tree.name}</h3>
+                    <h3 onclick="loadTreeDetail(${tree.id})" class="font-bold">${tree.name}</h3>
                     <p class="text-[#1F2937]">${tree.description} Its dense green</p>
                     <div class="flex justify-between ">
                         <p class="bg-[#DCFCE7] text-green-700 rounded-full p-2">${tree.category}</p>
@@ -62,11 +62,27 @@ const displayAllTrees = (trees) =>{
                     <button onclick="loadYourCart('${tree.name}',${tree.price})" class="btn btn-primary rounded-full bg-[#15803D] text-white mr-4 w-full">Add to Cart</button>
                 </div>
         `
-
         treeContainer.append(treeDiv);
-    });
+        
+    })
+}
 
-    
+const loadTreeDetail = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then(res => res.json())
+    .then(json => displayModalTree(json.plants))
+}
+
+const displayModalTree = (plant) => {
+        console.log(plant)
+        const detailsBox = document.getElementById('details-container');
+        detailsBox.innerHTML = `<h3 class="text-lg font-bold">${plant.name}</h3>
+                         <img class="max-h-[190px] w-full object-cover" src="${plant.image}" alt="">
+                        <p><span class="font-semibold">Category:</span> ${plant.category}</p>
+                        <p><span class="font-semibold">Price:</span>৳ ${plant.price}</p>
+                        <p><span class="font-semibold">Description:</span> ${plant.description}</p>`;
+
+        document.getElementById('my_modal_5').showModal();
 }
 
 const loadYourCart = (name, price) => {
