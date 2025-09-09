@@ -1,5 +1,5 @@
 #### 1) What is the difference between var, let, and const?
-Ans: 
+**Ans:** 
 var --> Function scoped (available inside the function), can be re-declared in the same scope, can be re-assigned
 let --> Block scoped (available within the block where it is called), cannot be redeclared, can be re-assigned
 const --> Block scoped (available within the block where it is called), cannot be redeclared, cannot be re-assigned
@@ -8,9 +8,9 @@ const --> Block scoped (available within the block where it is called), cannot b
 
 #### 2) What is the difference between map(), forEach(), and filter()? 
 **Ans**: 
-**forEach()** --> Loops through an array and performs an operation on each element of the array
-**map()** --> Transforms every element of an array
-**filter()** --> Filters out elements based on a given condition
+forEach() --> Loops through an array and performs an operation on each element of the array
+map() --> Transforms every element of an array
+filter() --> Filters out elements based on a given condition
 
 
 #### 3) What are arrow functions in ES6?
