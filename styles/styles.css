@@ -1,5 +1,5 @@
 .clicked{
-    background-color: #15803D
+    background-color: #15803D !important;
 };
 
 @import "tailwindcss";
